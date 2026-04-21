@@ -1,0 +1,1557 @@
+/* =============================================================
+       DESIGN SYSTEM — TOKENS
+       Paleta quente: cream / greige / preto profundo / bronze.
+       Zero azul hospitalar. Bronze como único acento metálico.
+       Geometria Square: border-radius 0 em toda UI controlada.
+    ============================================================= */
+:root {
+  /* Paleta */
+  --cream: #F5F2EE;
+  /* fundo primário */
+  --greige: #E8E2DA;
+  /* superfície secundária */
+  --greige-mid: #D4CEC7;
+  /* bordas, separadores */
+  --dark: #1A1814;
+  /* texto primário, hero bg */
+  --dark-warm: #2A2520;
+  /* variação do escuro */
+  --bronze: #9B8460;
+  /* metal — único acento cromático */
+  --warm-gray: #6B6560;
+  /* texto secundário */
+  --white: #FFFFFF;
+
+  /* Tipografia */
+  --serif: 'Cormorant Garant', Georgia, serif;
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Espaçamento — generoso por design */
+  --gap-xs: 0.5rem;
+  --gap-sm: 1rem;
+  --gap-md: 2rem;
+  --gap-lg: 4rem;
+  --gap-xl: 8rem;
+  --gap-2xl: 12rem;
+
+  /* Grid */
+  --max-w: 1280px;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--dark);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =============================================================
+       NAVEGAÇÃO
+       DECISÃO: Transparente sobre o hero escuro → frosted glass
+       ao rolar. Logo em serif sinaliza ateliê, não empresa.
+       Nenhum ícone, nenhum hambúrguer visível no desktop.
+       CTA é o único elemento com borda — hierarquia clara.
+    ============================================================= */
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  padding: 2rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.5s ease, padding 0.4s ease, border-color 0.5s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.nav.scrolled {
+  background: rgba(245, 242, 238, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 1.25rem 3rem;
+  border-bottom-color: var(--greige-mid);
+}
+
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.4s;
+}
+
+.nav.scrolled .nav-logo {
+  color: var(--dark);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav.scrolled .nav-links a {
+  color: var(--warm-gray);
+}
+
+.nav-links a:hover {
+  color: var(--bronze);
+}
+
+.nav-cta {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0.65rem 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.nav.scrolled .nav-cta {
+  color: var(--dark);
+  border-color: var(--dark);
+}
+
+.nav-cta:hover {
+  background: var(--bronze) !important;
+  border-color: var(--bronze) !important;
+  color: var(--white) !important;
+}
+
+/* =============================================================
+       HERO
+       DECISÃO: Background geométrico puro em CSS — sem stock photo.
+       Grid de linhas finas (opacidade 4%) sinaliza precisão suíça.
+       Fio de bronze vertical (direita) introduz o acento metálico
+       antes do conteúdo aparecer — como uma marca d'água editorial.
+       Headline em peso 300 + itálico: leveza que comanda.
+       CTA "pílula quadrada" = border-radius 0, cor cream sobre
+       escuro — o único elemento de alto contraste na tela.
+    ============================================================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 3rem 6rem;
+  overflow: hidden;
+}
+
+/* Fundo arquitetural escuro — substitua por foto real da clínica */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #0e0d0b 0%, #1a1814 45%, #232018 75%, #1a1814 100%);
+  z-index: 0;
+}
+
+/* Grid de precisão — textura exclusivamente CSS, sem imagem */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.038;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255, 255, 255, 1) 79px, rgba(255, 255, 255, 1) 80px),
+    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255, 255, 255, 1) 79px, rgba(255, 255, 255, 1) 80px);
+}
+
+/* Gradiente de legibilidade na base */
+.hero-vignette {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 65%;
+  background: linear-gradient(to top, rgba(15, 13, 10, 0.6) 0%, transparent 100%);
+  z-index: 2;
+}
+
+/* Fio de bronze — marca editorial vertical */
+.hero-thread {
+  position: absolute;
+  top: 0;
+  right: 4rem;
+  width: 1px;
+  height: 38vh;
+  background: linear-gradient(to bottom, transparent 0%, var(--bronze) 50%, transparent 100%);
+  z-index: 3;
+  opacity: 0.7;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 4;
+  max-width: 820px;
+}
+
+.hero-eyebrow {
+  font-size: 0.63rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 1.8rem;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(3.2rem, 6.5vw, 5.8rem);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: var(--white);
+  margin-bottom: 2.2rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.hero-sub {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  line-height: 1.95;
+  color: rgba(255, 255, 255, 0.48);
+  max-width: 400px;
+  margin-bottom: 3.2rem;
+}
+
+/* CTA primário — zero border-radius, filosofia Square */
+.btn-cta {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  background: var(--cream);
+  color: var(--dark);
+  padding: 1.15rem 2.8rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-cta:hover {
+  background: var(--bronze);
+  color: var(--white);
+}
+
+.btn-outline {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.63rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--dark);
+  padding: 1.15rem 2.8rem;
+  text-decoration: none;
+  border: 1px solid var(--greige-mid);
+  cursor: pointer;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.btn-outline:hover {
+  border-color: var(--dark);
+}
+
+/* Indicador de scroll — minimalista, some em mobile */
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 3rem;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.hero-scroll span {
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  writing-mode: vertical-rl;
+}
+
+.scroll-bar {
+  width: 1px;
+  height: 56px;
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent);
+  animation: scrollPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+/* =============================================================
+       HELPERS GLOBAIS
+    ============================================================= */
+.section {
+  padding: var(--gap-xl) 3rem;
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 0.6rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--dark);
+}
+
+.section-title em {
+  font-style: italic;
+}
+
+.rule {
+  width: 36px;
+  height: 1px;
+  background: var(--bronze);
+  margin: 2rem 0;
+}
+
+/* Reveal de scroll — sutil, editorial */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+.d1 {
+  transition-delay: 0.1s;
+}
+
+.d2 {
+  transition-delay: 0.22s;
+}
+
+.d3 {
+  transition-delay: 0.34s;
+}
+
+/* =============================================================
+       AUTORIDADE
+       DECISÃO: Fundo branco contrasta com hero escuro —
+       transição luminosa. Foto com moldura offset (bronze, 1px)
+       é um detalhe editorial que sugere ateliê de arte.
+       Estatísticas em grid 3col, em Cormorant numerais: os números
+       "falam" sem precisar de dashboard ou ícones.
+    ============================================================= */
+.authority {
+  background: var(--white);
+}
+
+.authority-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.photo-wrapper {
+  position: relative;
+  /* Offset frame — detalhe editorial inspirado em Hermès visual books */
+}
+
+.photo-frame-outer {
+  position: absolute;
+  top: 1.8rem;
+  left: 1.8rem;
+  right: -1.8rem;
+  bottom: -1.8rem;
+  border: 1px solid var(--bronze);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.photo-block {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 3/4;
+  background: linear-gradient(155deg, #3d3630 0%, #1a1814 100%);
+  overflow: hidden;
+}
+
+/* Gradiente interno simula ambiente da clínica */
+.photo-block::after {
+  content: 'Fotografia do Especialista';
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.authority-body {
+  padding: 1rem 0;
+}
+
+.authority-name {
+  font-family: var(--serif);
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.05;
+  margin-bottom: 0.5rem;
+}
+
+.authority-role {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 2.5rem;
+}
+
+/* Credenciais como lista semântica */
+.credentials {
+  margin-bottom: 2.5rem;
+  border-top: 1px solid var(--greige);
+}
+
+.cred-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--greige);
+  font-size: 0.8rem;
+  color: var(--warm-gray);
+  line-height: 1.5;
+}
+
+.cred-item::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: var(--bronze);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.authority-bio {
+  font-size: 0.88rem;
+  line-height: 1.95;
+  color: var(--warm-gray);
+  max-width: 500px;
+  margin-bottom: 3rem;
+}
+
+/* Números de autoridade — Cormorant como display numérico */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--greige-mid);
+}
+
+.stat {
+  padding-right: 2rem;
+}
+
+.stat+.stat {
+  border-left: 1px solid var(--greige);
+  padding-left: 2rem;
+}
+
+.stat-num {
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--dark);
+  margin-bottom: 0.4rem;
+}
+
+.stat-lbl {
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+}
+
+/* =============================================================
+       PROCEDIMENTOS (CINEMATIC TEXT REVEAL)
+       DECISÃO: Foco extremo na tipografia (banco privado).
+       Layout assimétrico leve. Imagem carregada on-demand no hover,
+       surgindo do vazio escuro ou textura sutil.
+    ============================================================= */
+.procedures-cinematic {
+  background: var(--dark);
+  color: var(--white);
+  padding: var(--gap-2xl) 3rem;
+}
+
+.proc-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.proc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.proc-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.proc-list-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.proc-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transform: translateX(0);
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.proc-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: 2px;
+}
+
+.proc-accent-line {
+  width: 24px;
+  height: 2px;
+  background-color: #D4AF37;
+  /* Dourado premium */
+}
+
+.proc-number {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.45);
+  /* Cinza/prata com baixa opacidade */
+}
+
+.proc-name {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.proc-cta {
+  font-family: var(--serif);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  white-space: nowrap;
+  align-self: center;
+}
+
+.proc-list-item:hover,
+.proc-list-item.active {
+  color: var(--white);
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.proc-list-item:hover .proc-text-wrapper,
+.proc-list-item.active .proc-text-wrapper {
+  transform: translateX(30px);
+}
+
+.proc-list-item:hover .proc-cta,
+.proc-list-item.active .proc-cta {
+  opacity: 1;
+  transform: translateX(0);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* 3D Flip Card Container */
+.proc-visuals {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: linear-gradient(155deg, #161512 0%, #0d0c0a 100%);
+  perspective: 1200px;
+}
+
+.proc-visual {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.proc-visual.active {
+  opacity: 1;
+}
+
+/* Card Inner — the element that actually rotates */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.proc-visual.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Shared face styles */
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Front — dark with image */
+.card-front {
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+}
+
+.card-front::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 13, 10, 0.5) 0%, transparent 50%);
+}
+
+/* Back — bronze with white text */
+.card-back {
+  background: linear-gradient(155deg, var(--bronze) 0%, #7a6a4e 100%);
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.card-desc {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  line-height: 1.55;
+  letter-spacing: -0.015em;
+  color: var(--white);
+  text-align: center;
+  max-width: 420px;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .proc-container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .proc-list-item {
+    padding: 1.5rem 0;
+  }
+
+  .proc-list-item:hover .proc-text-wrapper,
+  .proc-list-item.active .proc-text-wrapper {
+    transform: translateX(15px);
+  }
+
+  .proc-visuals {
+    aspect-ratio: 1/1;
+  }
+}
+
+/* =============================================================
+       ANTES E DEPOIS
+       DECISÃO: Grid 2×2. Slider interativo via clip-path CSS
+       controlado por JS nativo — zero dependências.
+       Handle quadrado (border-radius 0) consistente com
+       o design system. Placeholders greige respeitam paleta;
+       serão substituídos por fotos reais de casos.
+    ============================================================= */
+.before-after {
+  background: var(--cream);
+}
+
+.ba-intro {
+  max-width: 560px;
+  margin-bottom: 4rem;
+}
+
+.ba-intro p {
+  font-size: 0.88rem;
+  color: var(--warm-gray);
+  line-height: 1.95;
+}
+
+.ba-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--greige-mid);
+}
+
+.ba-item {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  cursor: col-resize;
+  user-select: none;
+  background: var(--greige);
+}
+
+.ba-before,
+.ba-after {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ba-before {
+  background: linear-gradient(135deg, #cec8c0 0%, #b8b0a6 100%);
+}
+
+.ba-after {
+  background: linear-gradient(135deg, #eae4dc 0%, #f5f2ee 100%);
+  /* Inicia no meio; controlado por JS */
+  clip-path: inset(0 50% 0 0);
+}
+
+.ba-placeholder {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(26, 24, 20, 0.22);
+  text-align: center;
+  line-height: 2.2;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Linha divisória do slider */
+.ba-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: var(--white);
+  transform: translateX(-50%);
+  z-index: 5;
+  pointer-events: none;
+  transition: left 0s;
+}
+
+/* Handle quadrado — zero border-radius */
+.ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 38px;
+  height: 38px;
+  background: var(--white);
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+  pointer-events: none;
+  transition: left 0s;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.ba-handle svg {
+  width: 16px;
+  height: 16px;
+  color: var(--dark);
+}
+
+.ba-case-tag {
+  position: absolute;
+  top: 1.4rem;
+  left: 1.4rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(26, 24, 20, 0.4);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.ba-label-b {
+  position: absolute;
+  bottom: 1.4rem;
+  left: 1.4rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.ba-label-a {
+  position: absolute;
+  bottom: 1.4rem;
+  right: 1.4rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(26, 24, 20, 0.4);
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* =============================================================
+       DEPOIMENTOS — SHOWROOM 3D / VITRINE
+       DECISÃO: Inspirado em configuradores Porsche/BMW. Cards
+       laterais inclinados em rotateY, central frontal. Hover em
+       qualquer card avança para frente (translateZ). Sensação de
+       showroom ou vitrine 3D premium.
+       Perspectiva generosa (1400px) para profundidade elegante.
+    ============================================================= */
+.testimonials {
+  background: var(--dark);
+  padding: var(--gap-xl) 3rem var(--gap-lg);
+  overflow: hidden;
+}
+
+.testimonials .eyebrow {
+  color: var(--bronze);
+}
+
+.testimonials .section-title {
+  color: var(--white) !important;
+}
+
+.testimonials .rule {
+  margin-bottom: 0;
+}
+
+/* --- SHOWROOM STAGE: o palco 3D --- */
+.showroom-stage {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 4rem auto 0;
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+}
+
+/* Reflexo no "chão" do showroom */
+.showroom-stage::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 10%;
+  right: 10%;
+  height: 120px;
+  background: linear-gradient(to bottom,
+      rgba(155, 132, 96, 0.06) 0%,
+      transparent 100%);
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(20px);
+}
+
+/* --- TRACK: container 3D que segura os cards --- */
+.showroom-track {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- CARD BASE --- */
+.showroom-card {
+  position: absolute;
+  width: 340px;
+  height: 380px;
+  transform-style: preserve-3d;
+  transition:
+    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.6s ease,
+    filter 0.6s ease,
+    box-shadow 0.6s ease;
+  cursor: pointer;
+  will-change: transform;
+}
+
+/* --- POSIÇÕES 3D (estado padrão) --- */
+
+/* Card Central — frontal, sem rotação, à frente */
+.showroom-card[data-position="center"] {
+  transform: translateX(0) translateZ(60px) rotateY(0deg);
+  z-index: 3;
+  opacity: 1;
+  filter: brightness(1);
+}
+
+/* Card Esquerdo — rotação positiva no Y, recuado */
+.showroom-card[data-position="left"] {
+  transform: translateX(-380px) translateZ(-80px) rotateY(35deg);
+  z-index: 1;
+  opacity: 0.7;
+  filter: brightness(0.7);
+}
+
+/* Card Direito — rotação negativa no Y, recuado */
+.showroom-card[data-position="right"] {
+  transform: translateX(380px) translateZ(-80px) rotateY(-35deg);
+  z-index: 1;
+  opacity: 0.7;
+  filter: brightness(0.7);
+}
+
+/* --- HOVER: qualquer card avança para frente --- */
+.showroom-card:hover {
+  transform: translateX(var(--hover-tx, 0)) translateZ(120px) rotateY(var(--hover-ry, 0deg)) !important;
+  opacity: 1 !important;
+  filter: brightness(1.05) !important;
+  z-index: 10 !important;
+}
+
+/* Hover custom offsets por posição */
+.showroom-card[data-position="center"]:hover {
+  --hover-tx: 0;
+  --hover-ry: 0deg;
+}
+
+.showroom-card[data-position="left"]:hover {
+  --hover-tx: -340px;
+  --hover-ry: 18deg;
+}
+
+.showroom-card[data-position="right"]:hover {
+  --hover-tx: 340px;
+  --hover-ry: -18deg;
+}
+
+/* --- CARD INNER: superfície visual do card --- */
+.showroom-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(165deg,
+      rgba(42, 37, 32, 0.95) 0%,
+      rgba(26, 24, 20, 0.98) 100%);
+  border: 1px solid rgba(155, 132, 96, 0.15);
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(155, 132, 96, 0.06) inset;
+  transition: box-shadow 0.6s ease, border-color 0.6s ease;
+}
+
+/* Hover glow na borda */
+.showroom-card:hover .showroom-card-inner {
+  border-color: rgba(155, 132, 96, 0.35);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(155, 132, 96, 0.08),
+    0 0 0 1px rgba(155, 132, 96, 0.1) inset;
+}
+
+/* --- GLOW AMBIENT: reflexo de luz no topo do card --- */
+.showroom-card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(180deg,
+      rgba(155, 132, 96, 0.06) 0%,
+      transparent 100%);
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+.showroom-card:hover .showroom-card-glow {
+  background: linear-gradient(180deg,
+      rgba(155, 132, 96, 0.12) 0%,
+      transparent 100%);
+}
+
+/* --- ASPAS DECORATIVAS --- */
+.showroom-card-quote-icon {
+  font-family: var(--serif);
+  font-size: 5rem;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(155, 132, 96, 0.18);
+  margin-bottom: -1.5rem;
+  user-select: none;
+  transition: color 0.6s ease;
+}
+
+.showroom-card:hover .showroom-card-quote-icon {
+  color: rgba(155, 132, 96, 0.35);
+}
+
+/* --- TEXTO DO DEPOIMENTO --- */
+.showroom-card-text {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  transition: color 0.5s ease;
+}
+
+.showroom-card:hover .showroom-card-text {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* --- FOOTER DO CARD: linha + autor --- */
+.showroom-card-footer {
+  margin-top: auto;
+}
+
+.showroom-card-line {
+  width: 24px;
+  height: 1px;
+  background: var(--bronze);
+  margin-bottom: 1rem;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.showroom-card:hover .showroom-card-line {
+  width: 48px;
+}
+
+.showroom-card-author {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+
+.showroom-card-role {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bronze);
+}
+
+/* --- NAVIGATION DOTS --- */
+.showroom-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 3rem;
+}
+
+.showroom-dot {
+  width: 32px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  padding: 0;
+}
+
+.showroom-dot.active {
+  width: 56px;
+  background: var(--bronze);
+}
+
+.showroom-dot:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* =============================================================
+       LOCALIZAÇÃO
+       DECISÃO: Mapa à esquerda (placeholder com cruciform —
+       sinaliza localização sem depender de terceiros), coluna de
+       endereço à direita. Layout de banco privado: label em bronze
+       + valor em warm-gray. CTA WhatsApp secundário.
+    ============================================================= */
+.location-section {
+  background: var(--white);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.map-placeholder {
+  background: var(--greige);
+  aspect-ratio: 1 / 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Cruciform como indicador de localização — purely CSS */
+.map-placeholder::before,
+.map-placeholder::after {
+  content: '';
+  position: absolute;
+  background: var(--bronze);
+  opacity: 0.25;
+}
+
+.map-placeholder::before {
+  width: 1px;
+  height: 50%;
+  top: 25%;
+  left: 50%;
+}
+
+.map-placeholder::after {
+  height: 1px;
+  width: 50%;
+  left: 25%;
+  top: 50%;
+}
+
+.map-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  position: relative;
+  z-index: 1;
+}
+
+.location-info {
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.location-address {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.45;
+  margin-bottom: 2.5rem;
+}
+
+.contact-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.contact-row {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.contact-lbl {
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  min-width: 72px;
+  padding-top: 3px;
+  flex-shrink: 0;
+}
+
+.contact-val {
+  font-size: 0.84rem;
+  color: var(--warm-gray);
+  line-height: 1.75;
+}
+
+.contact-val a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--greige-mid);
+  transition: border-color 0.3s;
+}
+
+.contact-val a:hover {
+  border-color: var(--bronze);
+  color: var(--dark);
+}
+
+/* =============================================================
+       FOOTER
+       DECISÃO: Quatro colunas estilo relatório anual banco privado.
+       Hierarquia: marca / navegação / procedimentos / contato.
+       CRO-SP quase invisível (legalidade sem poluição visual).
+       Sem ícones de redes sociais — links tipográficos apenas.
+    ============================================================= */
+footer {
+  background: var(--dark);
+  padding: 5rem 3rem 3rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  margin-bottom: 2.5rem;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--white);
+}
+
+.footer-tagline {
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.32);
+  line-height: 1.85;
+  max-width: 230px;
+}
+
+.footer-cro {
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.15);
+  margin-top: auto;
+}
+
+.footer-col-head {
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 1.6rem;
+}
+
+.footer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.footer-list li,
+.footer-list li a {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.38);
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.3s;
+}
+
+.footer-list li a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-legal {
+  font-size: 0.62rem;
+  color: rgba(255, 255, 255, 0.18);
+  letter-spacing: 0.04em;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.footer-social a {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: var(--bronze);
+}
+
+/* =============================================================
+       RESPONSIVO
+       Mobile-first adjustments. Ponto de colapso: 1024px (tablet)
+       e 768px (mobile). Nav oculta links em mobile — apenas logo + CTA.
+    ============================================================= */
+@media (max-width: 1100px) {
+  .authority-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .photo-wrapper {
+    max-width: 380px;
+  }
+
+  .photo-frame-outer {
+    display: none;
+  }
+
+  .ba-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Showroom 3D — tablet */
+  .showroom-card {
+    width: 280px;
+    height: 340px;
+  }
+
+  .showroom-card[data-position="left"] {
+    transform: translateX(-300px) translateZ(-80px) rotateY(35deg);
+  }
+
+  .showroom-card[data-position="right"] {
+    transform: translateX(300px) translateZ(-80px) rotateY(-35deg);
+  }
+
+  .showroom-card[data-position="left"]:hover {
+    --hover-tx: -270px;
+  }
+
+  .showroom-card[data-position="right"]:hover {
+    --hover-tx: 270px;
+  }
+
+  .showroom-track {
+    height: 380px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location-info {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gap-xl: 5rem;
+  }
+
+  .section {
+    padding: var(--gap-xl) 1.5rem;
+  }
+
+  .nav {
+    padding: 1.4rem 1.5rem;
+  }
+
+  .nav.scrolled {
+    padding: 1rem 1.5rem;
+  }
+
+  .hero {
+    padding: 0 1.5rem 4rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: center;
+  }
+
+  .stats-row {
+    gap: 0;
+  }
+
+  .stat+.stat {
+    padding-left: 1.5rem;
+  }
+
+  .location-info {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .testimonials {
+    padding: var(--gap-lg) 1rem;
+  }
+
+  /* Showroom 3D — mobile: stack vertical */
+  .showroom-stage {
+    perspective: none;
+    margin-top: 2.5rem;
+  }
+
+  .showroom-track {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 1.2rem;
+    transform-style: flat;
+  }
+
+  .showroom-card {
+    position: relative;
+    width: 100%;
+    height: auto;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  .showroom-card-inner {
+    padding: 2rem 1.8rem;
+  }
+
+  .showroom-card-quote-icon {
+    font-size: 3.5rem;
+    margin-bottom: -1rem;
+  }
+
+  .showroom-card-text {
+    font-size: 1rem;
+  }
+
+  .showroom-nav {
+    display: none;
+  }
+}

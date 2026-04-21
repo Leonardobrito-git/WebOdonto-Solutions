@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Rafael Silva — Estética Odontológica</title>
+
+  <!--
+    DECISÃO TIPOGRÁFICA:
+    Cormorant Garant (serif) — peso 300/400/italic — para títulos.
+    Confere elegância editorial sem parecer clínico.
+    Inter (sans) — peso 300/400/500 — para corpo, nav, labels.
+    Sans neutro e de alta legibilidade; não compete com o serif.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAV — transparente → frosted glass ao scroll
+  ============================================================ -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">Dr. Rafael Silva</a>
+    <ul class="nav-links">
+      <li><a href="#autoridade">O Especialista</a></li>
+      <li><a href="#procedimentos">Procedimentos</a></li>
+      <li><a href="#resultados">Resultados</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a href="#contato" class="nav-cta">Consulta</a>
+  </nav>
+
+  <!-- ============================================================
+       HERO — campo escuro, grid de precisão, headline editorial
+  ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-vignette" aria-hidden="true"></div>
+    <div class="hero-thread" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Estética Odontológica — Jardins · São Paulo</p>
+      <h1 class="hero-title">
+        O sorriso como<br>
+        <em>expressão de precisão.</em>
+      </h1>
+      <p class="hero-sub">
+        Atendimento individual. Diagnóstico personalizado.<br>
+        Resultados que duram décadas.
+      </p>
+      <a href="#contato" class="btn-cta">Agendar Consulta de Avaliação</a>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="scroll-bar"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       AUTORIDADE — fundo branco, moldura offset, bio + stats
+  ============================================================ -->
+  <section class="section authority" id="autoridade">
+    <div class="container">
+      <div class="authority-grid">
+
+        <!-- Fotografia com moldura offset editorial -->
+        <div class="photo-wrapper reveal">
+          <div class="photo-frame-outer" aria-hidden="true"></div>
+          <div class="photo-block">
+            <img src="dr-rafael-silva.png" alt="Dr. Rafael Silva" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+        </div>
+
+        <!-- Conteúdo biográfico -->
+        <div class="authority-body">
+          <p class="eyebrow reveal">O Especialista</p>
+          <h2 class="authority-name reveal d1">Dr. Rafael<br>Silva</h2>
+          <p class="authority-role reveal d2">Especialista em Estética e Reabilitação Oral</p>
+
+          <!-- Credenciais como lista estruturada — legibilidade sobre decoração -->
+          <div class="credentials reveal d2">
+            <div class="cred-item">Doutorado em Dentística Estética — Faculdade de Odontologia, USP</div>
+            <div class="cred-item">Fellow — AACD (American Academy of Cosmetic Dentistry)</div>
+            <div class="cred-item">Formação em Análise Funcional e Arco Facial — Kois Center, Seattle</div>
+            <div class="cred-item">Especialização em Harmonização Orofacial — Universitat de Barcelona</div>
+          </div>
+
+          <p class="authority-bio reveal d2">
+            Cada tratamento é conduzido pessoalmente, do diagnóstico à entrega final.
+            O compromisso não é com o procedimento — é com o resultado que você vai
+            carregar pelo resto da vida.
+          </p>
+
+          <!-- Números de autoridade integrados como ritmo tipográfico -->
+          <div class="stats-row">
+            <div class="stat reveal d1">
+              <div class="stat-num">23</div>
+              <div class="stat-lbl">Anos de clínica</div>
+            </div>
+            <div class="stat reveal d2">
+              <div class="stat-num">4.800<sup style="font-size:1.1rem;vertical-align:middle">+</sup></div>
+              <div class="stat-lbl">Casos concluídos</div>
+            </div>
+            <div class="stat reveal d3">
+              <div class="stat-num">12</div>
+              <div class="stat-lbl">Países de formação</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROCEDIMENTOS — Cinematic Text Reveal
+  ============================================================ -->
+  <section class="section procedures-cinematic" id="procedimentos">
+    <div class="container proc-container">
+
+      <!-- Lado Esquerdo: Tipografia Gigante -->
+      <div class="proc-list">
+        <div class="proc-list-item reveal" data-proc="1">
+          <div class="proc-text-wrapper">
+            <div class="proc-meta">
+              <span class="proc-accent-line"></span>
+              <span class="proc-number">01</span>
+            </div>
+            <h3 class="proc-name">Lentes de Contato</h3>
+            <span class="proc-cta">saiba mais</span>
+          </div>
+        </div>
+        <div class="proc-list-item reveal d1" data-proc="2">
+          <div class="proc-text-wrapper">
+            <div class="proc-meta">
+              <span class="proc-accent-line"></span>
+              <span class="proc-number">02</span>
+            </div>
+            <h3 class="proc-name">Harmonização Facial</h3>
+            <span class="proc-cta">saiba mais</span>
+          </div>
+        </div>
+        <div class="proc-list-item reveal d2" data-proc="3">
+          <div class="proc-text-wrapper">
+            <div class="proc-meta">
+              <span class="proc-accent-line"></span>
+              <span class="proc-number">03</span>
+            </div>
+            <h3 class="proc-name">Reabilitação</h3>
+            <span class="proc-cta">saiba mais</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lado Direito: Visuals Cinematográficos -->
+      <div class="proc-visuals reveal d2">
+        <div class="proc-visual" data-proc="1">
+          <div class="card-inner">
+            <div class="card-front"
+              style="background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800');">
+            </div>
+            <div class="card-back">
+              <p class="card-desc">Finas lâminas de porcelana que remodelam o sorriso com precisão milimétrica,
+                corrigindo cor, formato e alinhamento de forma definitiva e minimamente invasiva.</p>
+            </div>
+          </div>
+        </div>
+        <div class="proc-visual" data-proc="2">
+          <div class="card-inner">
+            <div class="card-front"
+              style="background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800');">
+            </div>
+            <div class="card-back">
+              <p class="card-desc">Equilíbrio das proporções do rosto com naturalidade, realçando a beleza única de cada
+                paciente. Preenchimentos estruturais e toxina botulínica de alta precisão.</p>
+            </div>
+          </div>
+        </div>
+        <div class="proc-visual" data-proc="3">
+          <div class="card-inner">
+            <div class="card-front"
+              style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800');">
+            </div>
+            <div class="card-back">
+              <p class="card-desc">Restabelece a função mastigatória e a estética global do sorriso. Planejamento
+                minucioso que devolve segurança e conforto absolutos a longo prazo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ANTES E DEPOIS — slider interativo, grid 2×2
+  ============================================================ -->
+  <section class="section before-after" id="resultados">
+    <div class="container">
+      <p class="eyebrow reveal">Casos Clínicos</p>
+      <h2 class="section-title reveal d1">Antes e<br><em>Depois.</em></h2>
+      <div class="rule"></div>
+      <div class="ba-intro reveal d2">
+        <p>
+          Cada resultado é único. Os casos a seguir são uma seleção de
+          transformações reais, realizadas na clínica nos últimos três anos.
+          Arraste o divisor para comparar.
+        </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="ba-grid">
+
+        <!-- Caso 01 -->
+        <div class="ba-item reveal" data-ba>
+          <div class="ba-before">
+            <img src="before-caso01.png" alt="Antes — Caso 01" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="ba-after">
+            <img src="after-caso01.png" alt="Depois — Caso 01" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="ba-line"></div>
+          <div class="ba-handle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <path d="M8 8 L4 12 L8 16M16 8 L20 12 L16 16" />
+            </svg>
+          </div>
+          <span class="ba-case-tag">Lentes de Contato · Caso 01</span>
+          <span class="ba-label-b">Antes</span>
+          <span class="ba-label-a">Depois</span>
+        </div>
+
+        <!-- Caso 02 -->
+        <div class="ba-item reveal d1" data-ba>
+          <div class="ba-before">
+            <img src="before-caso02.png" alt="Antes — Caso 02" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="ba-after">
+            <img src="https://images.unsplash.com/photo-1581585090032-87e8e0747a35?auto=format&fit=crop&q=80&w=800"
+              alt="Depois — Caso 02" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="ba-line"></div>
+          <div class="ba-handle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <path d="M8 8 L4 12 L8 16M16 8 L20 12 L16 16" />
+            </svg>
+          </div>
+          <span class="ba-case-tag">Harmonização Orofacial · Caso 02</span>
+          <span class="ba-label-b">Antes</span>
+          <span class="ba-label-a">Depois</span>
+        </div>
+
+        <!-- Caso 03 -->
+        <div class="ba-item reveal d1" data-ba>
+          <div class="ba-before">
+            <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=800"
+              alt="Antes — Caso 03" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="ba-after">
+            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800"
+              alt="Depois — Caso 03" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="ba-line"></div>
+          <div class="ba-handle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <path d="M8 8 L4 12 L8 16M16 8 L20 12 L16 16" />
+            </svg>
+          </div>
+          <span class="ba-case-tag">Reabilitação Oral · Caso 03</span>
+          <span class="ba-label-b">Antes</span>
+          <span class="ba-label-a">Depois</span>
+        </div>
+
+        <!-- Caso 04 -->
+        <div class="ba-item reveal d2" data-ba>
+          <div class="ba-before">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800"
+              alt="Antes — Caso 04" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="ba-after">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800"
+              alt="Depois — Caso 04" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="ba-line"></div>
+          <div class="ba-handle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <path d="M8 8 L4 12 L8 16M16 8 L20 12 L16 16" />
+            </svg>
+          </div>
+          <span class="ba-case-tag">Lentes de Contato · Caso 04</span>
+          <span class="ba-label-b">Antes</span>
+          <span class="ba-label-a">Depois</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DEPOIMENTOS — Showroom 3D / Vitrine com cards em perspectiva
+       Referência: Porsche/BMW configurators — rotateY lateral,
+       card central frontal, hover avança qualquer card.
+  ============================================================ -->
+  <section class="testimonials" id="depoimentos">
+    <div class="container">
+      <p class="eyebrow reveal">O que dizem</p>
+      <h2 class="section-title reveal d1" style="color: var(--dark); margin-bottom: 1rem;">
+        Experiências<br><em>Reais.</em></h2>
+      <div class="rule reveal d1"></div>
+    </div>
+
+    <!-- Showroom 3D Stage -->
+    <div class="showroom-stage reveal d2">
+      <div class="showroom-track" id="showroomTrack">
+
+        <!-- Card Left -->
+        <div class="showroom-card" data-position="left">
+          <div class="showroom-card-inner">
+            <div class="showroom-card-glow"></div>
+            <div class="showroom-card-quote-icon" aria-hidden="true">"</div>
+            <p class="showroom-card-text">
+              Pela primeira vez na minha vida adulta, não penso no meu sorriso
+              antes de sorrir.
+            </p>
+            <div class="showroom-card-footer">
+              <div class="showroom-card-line"></div>
+              <p class="showroom-card-author">C. M.</p>
+              <p class="showroom-card-role">Executiva · São Paulo</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Center -->
+        <div class="showroom-card" data-position="center">
+          <div class="showroom-card-inner">
+            <div class="showroom-card-glow"></div>
+            <div class="showroom-card-quote-icon" aria-hidden="true">"</div>
+            <p class="showroom-card-text">
+              O diagnóstico foi tão detalhado que eu entendi cada etapa antes
+              de qualquer procedimento. Essa clareza muda tudo.
+            </p>
+            <div class="showroom-card-footer">
+              <div class="showroom-card-line"></div>
+              <p class="showroom-card-author">R. F.</p>
+              <p class="showroom-card-role">Médico · Rio de Janeiro</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Right -->
+        <div class="showroom-card" data-position="right">
+          <div class="showroom-card-inner">
+            <div class="showroom-card-glow"></div>
+            <div class="showroom-card-quote-icon" aria-hidden="true">"</div>
+            <p class="showroom-card-text">
+              Resultado invisível para quem não sabe que houve intervenção.
+              Exatamente o que eu precisava.
+            </p>
+            <div class="showroom-card-footer">
+              <div class="showroom-card-line"></div>
+              <p class="showroom-card-author">L. B.</p>
+              <p class="showroom-card-role">Arquiteta · Brasília</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigation dots -->
+      <div class="showroom-nav">
+        <button class="showroom-dot active" data-target="0" aria-label="Depoimento 1"></button>
+        <button class="showroom-dot" data-target="1" aria-label="Depoimento 2"></button>
+        <button class="showroom-dot" data-target="2" aria-label="Depoimento 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LOCALIZAÇÃO + CONTATO — mapa / coluna de endereço
+  ============================================================ -->
+  <section class="section location-section" id="contato">
+    <div class="container">
+      <div class="location-grid">
+
+        <!-- Mapa placeholder — substituir por Google Maps embed ou foto do edifício -->
+        <div class="map-placeholder">
+          <span class="map-label">Jardins · São Paulo</span>
+        </div>
+
+        <!-- Informações de contato estilo banco privado -->
+        <div class="location-info">
+          <a href="https://wa.me/5511987654321" class="btn-cta reveal">
+            Agendar pelo WhatsApp
+          </a>
+          <p class="eyebrow reveal" style="margin-top: 2.5rem;">Localização e Contato</p>
+          <h3 class="location-address reveal d1">
+            Rua Oscar Freire,<br>
+            1234 — cj. 51<br>
+            Jardins · São Paulo
+          </h3>
+          <div class="rule"></div>
+
+          <div class="contact-rows reveal d2">
+            <div class="contact-row">
+              <span class="contact-lbl">Horário</span>
+              <span class="contact-val">
+                Segunda a sexta — 08h às 19h<br>
+                Sábados — 09h às 14h
+              </span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-lbl">Telefone</span>
+              <span class="contact-val">
+                <a href="tel:+5511987654321">+55 11 98765-4321</a>
+              </span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-lbl">WhatsApp</span>
+              <span class="contact-val">
+                <a href="https://wa.me/5511987654321">+55 11 98765-4321</a>
+              </span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-lbl">Instagram</span>
+              <span class="contact-val">
+                <a href="#">@drrafaelsilva</a>
+              </span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-lbl">E-mail</span>
+              <span class="contact-val">
+                <a href="mailto:contato@drrafaelsilva.com.br">contato@drrafaelsilva.com.br</a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER — quatro colunas, estilo relatório anual banco privado
+       Baixa entropia visual. Sem ícones — apenas texto tipográfico.
+       CRO-SP quase invisível: obrigação legal sem poluição.
+  ============================================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Coluna 1 — Marca -->
+        <div class="footer-brand">
+          <div class="footer-logo">Dr. Rafael Silva</div>
+          <p class="footer-tagline">
+            Estética odontológica de alta performance.<br>
+            Atendimento exclusivo em São Paulo.
+          </p>
+          <p class="footer-cro">CRO-SP 12.345 — CFO 12.345/SP</p>
+        </div>
+
+        <!-- Coluna 2 — Navegação -->
+        <div>
+          <p class="footer-col-head">Navegação</p>
+          <ul class="footer-list">
+            <li><a href="#autoridade">O Especialista</a></li>
+            <li><a href="#procedimentos">Procedimentos</a></li>
+            <li><a href="#resultados">Casos Clínicos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3 — Procedimentos -->
+        <div>
+          <p class="footer-col-head">Procedimentos</p>
+          <ul class="footer-list">
+            <li>Lentes de Contato Dental</li>
+            <li>Harmonização Orofacial</li>
+            <li>Reabilitação Oral</li>
+            <li>Clareamento Profissional</li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4 — Contato -->
+        <div>
+          <p class="footer-col-head">Contato</p>
+          <ul class="footer-list">
+            <li>+55 11 98765-4321</li>
+            <li><a href="#">@drrafaelsilva</a></li>
+            <li style="color:rgba(255,255,255,0.22);line-height:1.75;">
+              Rua Oscar Freire, 1234<br>
+              Jardins · São Paulo · SP
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Base do rodapé — legal + social -->
+      <div class="footer-bottom">
+        <p class="footer-legal">
+          © 2025 Dr. Rafael Silva. Todos os direitos reservados.
+          Imagens de uso exclusivo — proibida reprodução.
+        </p>
+        <div class="footer-social">
+          <a href="#">Instagram</a>
+          <a href="#">WhatsApp</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT — zero dependências externas
+       1. Nav: transparent → frosted glass ao scroll
+       2. Before/After: clip-path via mouse e touch
+       3. Scroll Reveal: IntersectionObserver
+  ============================================================ -->
+  <script>
+    // 1. NAV — estado de scroll
+    const nav = document.getElementById('nav');
+    const toggleNav = () => nav.classList.toggle('scrolled', window.scrollY > 50);
+    window.addEventListener('scroll', toggleNav, { passive: true });
+    toggleNav();
+
+    // 2. BEFORE/AFTER SLIDERS
+    document.querySelectorAll('[data-ba]').forEach(item => {
+      const after = item.querySelector('.ba-after');
+      const line = item.querySelector('.ba-line');
+      const handle = item.querySelector('.ba-handle');
+      let dragging = false;
+
+      const update = (clientX) => {
+        const { left, width } = item.getBoundingClientRect();
+        const pct = Math.min(Math.max((clientX - left) / width * 100, 2), 98);
+        const right = 100 - pct;
+        // clip-path inset(top right bottom left) — recorta o lado direito da camada "depois"
+        after.style.clipPath = `inset(0 ${right}% 0 0)`;
+        line.style.left = `${pct}%`;
+        handle.style.left = `${pct}%`;
+      };
+
+      // Mouse
+      item.addEventListener('mousedown', (e) => { dragging = true; update(e.clientX); });
+      window.addEventListener('mouseup', () => { dragging = false; });
+      window.addEventListener('mousemove', (e) => { if (dragging) update(e.clientX); });
+
+      // Touch
+      item.addEventListener('touchstart', (e) => { dragging = true; update(e.touches[0].clientX); }, { passive: true });
+      window.addEventListener('touchend', () => { dragging = false; });
+      window.addEventListener('touchmove', (e) => { if (dragging) update(e.touches[0].clientX); }, { passive: true });
+    });
+
+    // 3. SCROLL REVEAL
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          observer.unobserve(e.target); // dispara uma única vez
+        }
+      }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // 4. PROCEDURES CINEMATIC TEXT REVEAL & 3D FLIP
+    const procItems = document.querySelectorAll('.proc-list-item');
+    const procVisuals = document.querySelectorAll('.proc-visual');
+    const procContainer = document.querySelector('.proc-container');
+
+    if (procItems.length > 0) {
+      procItems.forEach(item => {
+        // Hover — mostra a imagem (frente do card)
+        item.addEventListener('mouseenter', () => {
+          const target = item.getAttribute('data-proc');
+
+          procItems.forEach(i => i.classList.remove('active'));
+          item.classList.add('active');
+
+          procVisuals.forEach(v => {
+            v.classList.remove('flipped');
+            if (v.getAttribute('data-proc') === target) {
+              v.classList.add('active');
+            } else {
+              v.classList.remove('active');
+            }
+          });
+        });
+
+        // Click — vira o card para revelar o verso bronze
+        item.addEventListener('click', () => {
+          const target = item.getAttribute('data-proc');
+          procVisuals.forEach(v => {
+            if (v.getAttribute('data-proc') === target) {
+              v.classList.toggle('flipped');
+            }
+          });
+        });
+      });
+
+      // Mouseleave no container inteiro — reseta tudo
+      procContainer.addEventListener('mouseleave', () => {
+        procItems.forEach(i => i.classList.remove('active'));
+        procVisuals.forEach(v => {
+          v.classList.remove('active');
+          v.classList.remove('flipped');
+        });
+      });
+    }
+
+    // 5. SHOWROOM 3D CAROUSEL — Vitrine de depoimentos
+    const showroomCards = document.querySelectorAll('.showroom-card');
+    const showroomDots = document.querySelectorAll('.showroom-dot');
+    // Posições circulares: [left, center, right]
+    const positions = ['left', 'center', 'right'];
+    let currentCenter = 1; // índice do card central
+
+    function updateShowroom(centerIndex) {
+      currentCenter = centerIndex;
+      const cardCount = showroomCards.length;
+
+      showroomCards.forEach((card, i) => {
+        // Calcula offset relativo ao centro
+        let offset = i - centerIndex;
+        // Normaliza para range [-1, 0, 1]
+        if (offset < -1) offset += cardCount;
+        if (offset > 1) offset -= cardCount;
+
+        let pos;
+        if (offset === 0) pos = 'center';
+        else if (offset === -1 || (offset === cardCount - 1)) pos = 'left';
+        else pos = 'right';
+
+        card.setAttribute('data-position', pos);
+      });
+
+      // Atualiza dots
+      showroomDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === centerIndex);
+      });
+    }
+
+    // Click nos dots
+    showroomDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const target = parseInt(dot.getAttribute('data-target'));
+        updateShowroom(target);
+      });
+    });
+
+    // Click no card lateral avança ele para o centro
+    showroomCards.forEach((card, index) => {
+      card.addEventListener('click', () => {
+        if (card.getAttribute('data-position') !== 'center') {
+          updateShowroom(index);
+        }
+      });
+    });
+
+    // Auto-rotate a cada 6s (pausa no hover)
+    let showroomInterval;
+    let showroomPaused = false;
+
+    function startShowroomAuto() {
+      showroomInterval = setInterval(() => {
+        if (!showroomPaused) {
+          const next = (currentCenter + 1) % showroomCards.length;
+          updateShowroom(next);
+        }
+      }, 6000);
+    }
+
+    const stageEl = document.querySelector('.showroom-stage');
+    if (stageEl) {
+      stageEl.addEventListener('mouseenter', () => { showroomPaused = true; });
+      stageEl.addEventListener('mouseleave', () => { showroomPaused = false; });
+      startShowroomAuto();
+    }
+  </script>
+
+</body>
+
+</html>
